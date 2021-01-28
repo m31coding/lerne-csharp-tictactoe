@@ -19,22 +19,19 @@ namespace TicTacToe
         private static void VerkündeErgebnis(Spielstand spielstand)
         {
             Console.WriteLine();
+            Symbol sieger = SpielstandKonvertierung.NachSymbol(spielstand);
 
-            if (spielstand == Spielstand.KreuzIstSieger)
+            if (sieger == Symbol.Kreuz)
             {
                 Console.WriteLine("Kreuz hat gewonnen!");
             }
-            else if (spielstand == Spielstand.KreisIstSieger)
+            else if (sieger == Symbol.Kreis)
             {
                 Console.WriteLine("Kreis hat gewonnen!");
             }
-            else if (spielstand == Spielstand.Unentschieden)
-            {
-                Console.WriteLine("Unentschieden!");
-            }
             else
             {
-                throw new ArgumentException($"Unerwartetes Ergebnis: {spielstand}.");
+                Console.WriteLine("Unentschieden!");
             }
         }
     }

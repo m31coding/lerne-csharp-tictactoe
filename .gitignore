@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/TicTacToe/Spieler/Siegertyp.cs
+/TicTacToe/Spieler/MisterBoring.cs
+/TicTacToe/Spieler/MissRandom.cs

@@ -24,7 +24,7 @@ namespace TicTacToe
 
             while (spielstand == Spielstand.Offen)
             {
-                Spielzug nächsterZug = ErhalteNächstenSpielzug(new Spielstellung(stellung));
+                Spielzug nächsterZug = ErhalteNächstenSpielzug(stellung.Kopie());
                 stellung.FühreSpielzugAus(nächsterZug);
                 Stellungsanalyse stellungsanalyse = new Stellungsanalyse(stellung);
                 spielstand = stellungsanalyse.ErhalteSpielstand();

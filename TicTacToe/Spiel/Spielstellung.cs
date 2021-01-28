@@ -21,11 +21,16 @@ namespace TicTacToe.Spiel
             SpielerAmZug = Symbol.Kreuz;
         }
 
-        public Spielstellung(Spielstellung spielstellung)
+        private Spielstellung(Spielstellung spielstellung)
         {
             spielbrett = new Symbol[3, 3];
             Array.Copy(spielstellung.spielbrett, spielbrett, spielbrett.Length);
             SpielerAmZug = spielstellung.SpielerAmZug;
+        }
+
+        public Spielstellung Kopie()
+        {
+            return new Spielstellung(this);
         }
 
         public Symbol ErhalteSymbol(int zeile, int spalte)
@@ -37,7 +42,7 @@ namespace TicTacToe.Spiel
         {
             List<Spielzug> möglicheZüge = new List<Spielzug>();
 
-            for(int zeile = 0; zeile < 3; zeile++)
+            for (int zeile = 0; zeile < 3; zeile++)
             {
                 for (int spalte = 0; spalte < 3; spalte++)
                 {
@@ -55,7 +60,7 @@ namespace TicTacToe.Spiel
 
         private bool SpielzugIstGültig(Spielzug spielzug)
         {
-            return spielzug.Symbol == SpielerAmZug && 
+            return spielzug.Symbol == SpielerAmZug &&
                 FeldIstFrei(spielzug.Zeile, spielzug.Spalte);
         }
 
@@ -77,7 +82,7 @@ namespace TicTacToe.Spiel
 
         private bool FeldIstFrei(int zeile, int spalte)
         {
-            return spielbrett[zeile, spalte] == Symbol.Leer;
+            return spielbrett[zeile, spalte] == Symbol.Keins;
         }
 
         private void SetzeSymbol(int zeile, int spalte, Symbol symbol)
@@ -104,11 +109,11 @@ namespace TicTacToe.Spiel
 
         private char AlsZeichen(Symbol symbol)
         {
-            if(symbol == Symbol.Kreuz)
+            if (symbol == Symbol.Kreuz)
             {
                 return 'X';
             }
-            else if(symbol == Symbol.Kreis)
+            else if (symbol == Symbol.Kreis)
             {
                 return 'O';
             }

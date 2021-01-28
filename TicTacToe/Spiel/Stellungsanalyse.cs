@@ -88,7 +88,7 @@
                    stellung.ErhalteSymbol(0, 2) == symbol;
         }
 
-        private int AnzahlSymbole()
+        public int AnzahlSymbole()
         {
             int anzahlSymbole = 0;
             
@@ -96,7 +96,7 @@
             {
                 for(int spalte = 0; spalte < 3; spalte++)
                 {
-                    if(stellung.ErhalteSymbol(zeile, spalte) != Symbol.Leer)
+                    if(stellung.ErhalteSymbol(zeile, spalte) != Symbol.Keins)
                     {
                         anzahlSymbole++;
                     }

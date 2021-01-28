@@ -2,7 +2,7 @@
 {
     public enum Symbol 
     {
-        Leer,
+        Keins,
         Kreuz,
         Kreis
     }
