@@ -7,13 +7,6 @@ namespace TicTacToe.Spiel
     public class Spielstellung
     {
         private readonly Symbol[,] spielbrett;
-        public Symbol SpielerAmZug { get; private set; }
-
-        public Spielstellung(Symbol[,] spielbrett, Symbol spielerAmZug)
-        {
-            this.spielbrett = spielbrett;
-            SpielerAmZug = spielerAmZug;
-        }
 
         public Spielstellung()
         {
@@ -27,6 +20,8 @@ namespace TicTacToe.Spiel
             Array.Copy(spielstellung.spielbrett, spielbrett, spielbrett.Length);
             SpielerAmZug = spielstellung.SpielerAmZug;
         }
+
+        public Symbol SpielerAmZug { get; private set; }
 
         public Spielstellung Kopie()
         {
