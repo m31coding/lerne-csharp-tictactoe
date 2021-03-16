@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe.Spiel
 {
-    public readonly struct Spielzug
+    public struct Spielzug
     {
         public Spielzug(Symbol symbol, int zeile, int spalte)
         {
