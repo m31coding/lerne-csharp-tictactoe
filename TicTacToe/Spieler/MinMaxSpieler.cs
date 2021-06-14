@@ -48,15 +48,15 @@ namespace TicTacToe.Spieler
             stellung.FühreSpielzugAus(spielzug);
             Spielstand spielstand = new Stellungsanalyse(stellung).ErhalteSpielstand();
 
-            if(spielstand == Spielstand.KreuzIstSieger)
+            if (spielstand == Spielstand.KreuzIstSieger)
             {
                 return 1;
             }
-            else if(spielstand == Spielstand.KreisIstSieger)
+            else if (spielstand == Spielstand.KreisIstSieger)
             {
                 return -1;
             }
-            else if(spielstand == Spielstand.Unentschieden)
+            else if (spielstand == Spielstand.Unentschieden)
             {
                 return 0;
             }
