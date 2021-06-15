@@ -55,8 +55,7 @@ namespace TicTacToe.Spiel
 
         private bool SpielzugIstGültig(Spielzug spielzug)
         {
-            return spielzug.Symbol == SpielerAmZug &&
-                FeldIstFrei(spielzug.Zeile, spielzug.Spalte);
+            return spielzug.Symbol == SpielerAmZug && FeldIstFrei(spielzug.Zeile, spielzug.Spalte);
         }
 
         public void FühreSpielzugAus(Spielzug spielzug)
